@@ -1,0 +1,360 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2efeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.logo-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.logo {
+    max-width: 6rem; /* 根據需要調整Logo大小 */
+    height: auto;
+}
+
+.calculators {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* BMR部分的樣式 */
+.bmr-container {
+    position:absolute;
+    left: 9vw;
+    color: #706960; /* 文字顏色 */
+    padding: 50px 30px;
+    border-radius: 30px;
+    width: 400px; /* 縮小容器寬度 */
+    height: 460px;
+    margin-top: 5rem;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+    text-align: center;
+    gap: 1.5em;
+    background: linear-gradient(145deg, #f2efeb, #fafafa);
+    box-shadow: inset 10px 10px 10px #ffffff, inset -10px -10px 10px #e9e6e1;
+    font-size: 17px;
+    border: none;
+}
+.bmr-container h1 {
+    margin-top: 1px;
+    text-align: center;
+    color:#706960; /* 標題顏色 */
+    font-size: 1.6em; /* 放大標題 */
+    font-weight: bold; /* 加粗標題 */
+}
+.bmr-container p {
+    text-align: center;
+    color: #706960;
+    font-size: 12px;
+}
+.bmr-container label {
+    margin-top: 10px;
+    color: #706960;
+    width: 100%;
+    text-align: center;
+}
+.bmr-container button{
+    background: linear-gradient(145deg, #f2efeb, #fafafa);
+    box-shadow: inset 4px 4px 4px #ffffff, inset -4px -4px 4px #e9e6e1;
+    border: none;
+    color: rgb(101, 88, 88);
+    cursor: pointer;
+    margin-top: 25px;
+    margin-right: 10px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    width: 100%(100% - 24px);
+    transition:  all 0.3s ease;
+    outline: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+.bmr-container::before{
+    display: none;
+}
+.bmr-container.sunken {
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #e9e6e1;
+}
+.bmr-container button:active {
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #e0e0e0;
+}
+input {
+    padding: 8px 12px;
+    margin-top: 5px; 
+    color: #706960;
+    width: 100%(100% - 24px);
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 0.8rem; 
+    background:#f1f0f0;
+    box-shadow:inset -3px -3px 4px white,
+    inset 2px 2px 4px #d9d8d8;
+}
+/* 移除數字輸入框的上下鍵 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.bmr-container::placeholder {
+    color: #DED9D3; /* 設置占位符顏色 */
+}
+.bmr-container:focus, select:focus {
+    outline: none;
+    border-color: #8C8279;
+    box-shadow: 0 0 5px rgba(42, 42, 46, 0.5);
+}
+.bmr-container button:hover {
+        background-color: #8C8279;  
+}
+/* TDEE部分的樣式 */
+.tdee-container {
+    position: absolute;
+    right: 4vw;
+    margin-top: 6rem;
+    text-align:left;
+    font-size: 18px;
+    width: 700px;
+    height:auto;
+    color: #686058
+}
+.tree-container {
+    border: none !important; /* 移除邊框並使用 !important 來強制應用 */
+    outline: none !important; /* 移除聚焦時的輪廓 */
+    box-shadow: none !important; /* 移除陰影 */
+}
+.tdee-container h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align:left;
+    color:#686058; /* 標題顏色 */
+    font-size: 1.6em; /* 放大標題 */
+    font-weight: bold; /* 加粗標題 */
+}
+.tdee-container p {
+    text-align:left;
+    color: #686058;
+    font-size: 13px;
+}
+.tdee-container label {
+    font-size: 15px;
+    font-weight: bold;
+}
+.tdee-container button {
+    color: #686058;
+}
+
+.tdee-container button {
+    color: rgb(101, 88, 88);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 0px;
+    padding: 12px 17px;
+    border-radius: 10px;
+    width: 100%(100% - 24px);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background: linear-gradient(145deg, #f2efeb, #fafafa);
+    box-shadow: inset 6px 6px 6px #ffffff, inset -6px -6px 6px #e9e6e1;
+    border: none;
+    font-size: 14px;
+    
+}
+.tdee-container button.raised {
+    background: linear-gradient(145deg, #f2efeb, #fafafa);
+    box-shadow: inset 6px 6px 6px #ffffff, inset -6px -6px 6px #e9e6e1;
+    background-color: #ffffff;
+}
+
+.tdee-container button.sunken {
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #e0e0e0;
+}
+
+.tdee-container button:active {
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #e0e0e0;
+}
+.tdee-page {
+    text-align: left;
+    margin-top: 20px;
+}
+.activity-group {
+    display:inline-block;
+    width: 120px;
+    height: 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    padding: 20px 20px;
+    border-radius: 16px; /* 圓角，可以根據需要調整或去掉 */
+    text-align: left;
+    background: linear-gradient(145deg, #f2efeb, #fafafa);
+    box-shadow: inset 4px 4px 4px #ffffff, inset -4px -4px 4px #e9e6e1;
+    border: none;
+}
+.tdee-page .activity-group p {
+    margin: 0;
+    padding: 5px 0;
+}
+.activity-icon{
+    align-items: center;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.tdee-page label,
+.tdee-page p {
+    display: block;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px
+}
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    border: none;
+}
+.tdee-page img{
+    display:inline;
+    justify-items: center;
+}
+#results {
+    margin-top: 10px;
+}
+
+#results h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff; /* 計算結果標題顏色 */
+    font-size: 1.5em;
+    font-weight: bold; /* 加粗計算結果標題 */
+}
+
+#results p {
+    text-align: center;
+    font-size: 20px;
+    font-weight:normal;
+    color: #706960;
+    font-weight: bold;
+    margin-top: 30px;
+}
+/* 手機樣式 */
+@media (max-width: 767px) {
+    .logo{
+        margin-top: 1.5rem;
+        max-width: 5rem;
+    }
+    .calculators {
+        flex-direction:column ;
+        align-items: center;
+    }
+    .bmr-container {
+        width: 75% ;
+        height: 370px;
+        position:relative;
+        margin-top: 2rem;
+        right: 0em;
+        left: 0.6rem;
+        border-radius: 1rem;
+    }
+    .bmr-container h1{ 
+        margin-top: -15px;
+        font-size: 1.4em; /* 放大標題 */
+    }
+    .bmr-container p {
+        font-size: 8px;
+    }
+    .bmr-container button{
+        margin-top: 1rem;
+    }
+    input {
+        width: 80%(100% - 24px);
+        font-size: 12px;
+    }
+    .tdee-container {
+        left: 12.5vw;
+        right: 0vw;
+        justify-items: center;
+        margin-top: 34rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+        height:auto;
+        color: #686058
+    }
+    .tdee-container h1 {
+        margin-top: 2rem;
+        font-size: 1.2em;
+    }
+    .tdee-container p {
+        text-align:left;
+        color: #686058;
+        font-size: 9px;
+        margin-right: 0.5rem;
+    }
+    .tdee-container button {
+        padding: 1.05rex 1.35rex;
+        border-radius: 0.5em;
+    }
+    .activity-group {
+        width: 100px;
+        height: auto;
+    }
+    form {
+        font-size: 12px
+    }
+    .radio-group {
+        width: 80%;
+    }
+    .bmr-container button{
+        margin-top: 1em;
+        margin-right: 10px;
+        padding: 14Px 18px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    .tdee-container label {
+            font-size: 12px;
+    }
+    #results p {
+    text-align: center;
+    font-size: 20px;
+    font-weight:normal;
+    color: #706960;
+    font-weight: bold;
+    margin-top: 1.5rem;        
+}
+
+/* 平板樣式 */
+
+@media (min-width: 992px) { 
+    
+}
+}

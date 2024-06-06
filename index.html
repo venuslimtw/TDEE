@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基礎代謝率 BMR+TDEE計算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="images/Venuslim.png" alt="Logo" class="logo"> <!-- 替換成你的Logo圖片路徑 -->
+    </div>
+    <div class="calculators">
+        <div class="container bmr-container">
+            <h1>基礎代謝率 (BMR)</h1>
+            <p>BMR 是指人體在休息狀態下所需的熱量，<br>呼吸、器官運作、體溫維持，即使躺著不動也會消耗的最低熱量。<br>BMR 會隨著年紀增加或體重減輕而降低，也會隨著肌肉量增加而提升。</p>
+            <form id="bmrForm">
+                <label>生理性別：</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="female" checked> 女性</label>
+                    <label><input type="radio" name="gender" value="male"> 男性</label>
+                </div>
+                <label for="age">年齡：</label>
+                <input type="number" id="age" placeholder="請輸入年齡" required>
+                <label for="height">身高：</label>
+                <input type="number" id="height" placeholder="請輸入身高（公分）" required>
+                <label for="weight">體重：</label>
+                <input type="number" id="weight" placeholder="請輸入體重（公斤）" required>
+                <button id="interactiveButton" type="submit" class="raised">計算</button>               
+            </form>
+            <div id="results">
+                <p id="bmrResult"></p>
+            </div>
+        </div>
+        
+        <div class="container tdee-container">
+            <h1>每日總熱量消耗 (TDEE)</h1>
+            <p>TDEE 是身體一整天下來，包括基礎代謝、活動量、吃東西所消耗的熱量。<br>不同的生活型態需要的熱量也不一樣，當每天攝取的熱量和 TDEE 相等，便達到「熱量平衡」</p>
+            <div class="tdee-buttons">
+                <button id="generalButton" type="button" class="raised" onclick="showGeneral()">一般</button>
+                <button id="weightLossButton" type="button" class="raised" onclick="showWeightLoss()">我想減重</button>
+            </div>
+            <div id="generalPage" class="tdee-page">
+                <div class="activity-group">
+                    <label><img src="images/1.png" alt="Icon" class="activity-icon"> 身體活動趨於靜態</label>
+                    <p>(幾乎不運動)</p>
+                    <p>BMR x 1.2 =</p>
+                    <label><span id="tdee1"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/2.png" alt="Icon" class="activity-icon">身體活動程度較低</label>
+                    <p>(每週運動 1-3 天)</p>
+                    <p>BMR x 1.375 =</p>
+                    <label><span id="tdee2"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/3.png" alt="Icon" class="activity-icon">身體活動程度正常</label>
+                    <p>(每週運動 3-5 天)</p>
+                    <p>BMR x 1.55 =</p>
+                    <label><span id="tdee3"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/4.png" alt="Icon" class="activity-icon">身體活動程度較高</label>
+                    <p>(每週運動 6-7 天)</p>
+                    <p>BMR x 1.725 =</p>
+                    <label><span id="tdee4"></span></label>
+                </div>
+            </div>
+            <div id="weightLossPage" class="tdee-page" style="display:none;">
+                <p>減重以均衡飲食為原則，應循序漸進才不易復胖，<br>建議從TDEE減少300大卡開始，視情況調整成減少500大卡。<br>請避免過度節食造成肌肉流失，減重期間熱量不得低於基礎代謝率。<br><br>※ 下方建議攝取為 TDEE -300 大卡</p>        
+                <div class="activity-group">
+                    <label><img src="images/1.png" alt="Icon" class="activity-icon"> 身體活動趨於靜態</label>
+                    <p>(幾乎不運動)<br><br>建議攝取</p>
+                    <label><span id="weightLoss1"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/2.png" alt="Icon" class="activity-icon"> 身體活動程度較低</label>
+                    <p>(每週運動 1-3 天)<br><br>建議攝取</p>
+                    <label><span id="weightLoss2"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/3.png" alt="Icon" class="activity-icon"> 身體活動程度正常</label>
+                    <p>(每週運動 3-5 天)<br><br>建議攝取</p>
+                    <label><span id="weightLoss3"></span></label>
+                </div>
+                <div class="activity-group">
+                    <label><img src="images/4.png" alt="Icon" class="activity-icon"> 身體活動程度較高</label>
+                    <p>(每週運動 6-7 天)<br><br>建議攝取</p>
+                    <label><span id="weightLoss4"></span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
